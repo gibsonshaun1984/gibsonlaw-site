@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Shaun Gibson | CV</title>
+  <meta name="description" content="Shaun Gibson. Senior international sports lawyer working across sport, rights and commercial partnerships." />
 
   <style>
     :root {
@@ -13,10 +14,15 @@
       --muted: #6B7280;
       --teal: #115E59;
       --line: rgba(24, 24, 27, 0.12);
+      --soft: rgba(255, 255, 255, 0.62);
     }
 
     * {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -25,25 +31,30 @@
       color: var(--text);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica, sans-serif;
       -webkit-font-smoothing: antialiased;
+      text-rendering: geometricPrecision;
+    }
+
+    a {
+      color: inherit;
     }
 
     .page {
-      max-width: 1180px;
+      max-width: 1240px;
       margin: 0 auto;
-      padding: 36px 28px 80px;
+      padding: 34px 28px 70px;
     }
 
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 90px;
+      margin-bottom: 76px;
     }
 
     .brand {
       font-size: 22px;
       font-weight: 500;
-      letter-spacing: -0.04em;
+      letter-spacing: -0.045em;
       color: var(--text);
       text-decoration: none;
     }
@@ -53,50 +64,110 @@
     }
 
     nav {
-      font-size: 13px;
-      letter-spacing: 0.08em;
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      font-size: 11px;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--muted);
     }
 
-    .hero {
-      display: grid;
-      grid-template-columns: 1.4fr 0.8fr;
-      gap: 70px;
-      align-items: center;
-      padding-bottom: 90px;
+    nav a {
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: var(--teal);
+    }
+
+    section {
+      padding: 76px 0;
       border-bottom: 1px solid var(--line);
     }
 
+    .section-label {
+      color: var(--teal);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
     h1 {
-      font-size: clamp(48px, 7vw, 92px);
-      line-height: 0.95;
-      letter-spacing: -0.065em;
-      margin: 0 0 28px;
+      font-size: clamp(52px, 8vw, 104px);
+      line-height: 0.92;
+      letter-spacing: -0.075em;
       font-weight: 500;
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      font-size: clamp(34px, 4.5vw, 58px);
+      line-height: 1.02;
+      letter-spacing: -0.06em;
+      font-weight: 500;
+      margin-bottom: 26px;
+    }
+
+    h3 {
+      font-size: 19px;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .body-text {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.62;
+      max-width: 680px;
+      margin-bottom: 0;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 68px;
+      align-items: center;
+      padding-top: 8px;
+      padding-bottom: 84px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-copy {
+      max-width: 760px;
     }
 
     .intro {
-      font-size: clamp(22px, 2.4vw, 34px);
-      line-height: 1.15;
-      letter-spacing: -0.035em;
-      margin: 0 0 22px;
-      max-width: 720px;
+      font-size: clamp(24px, 2.8vw, 36px);
+      line-height: 1.13;
+      letter-spacing: -0.045em;
+      margin-bottom: 22px;
+      max-width: 760px;
     }
 
     .sub {
       color: var(--muted);
       font-size: 18px;
       line-height: 1.55;
-      max-width: 640px;
-      margin: 0;
+      max-width: 670px;
+      margin-bottom: 0;
     }
 
     .stats {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      margin-top: 54px;
+      gap: 22px;
+      margin-top: 52px;
     }
 
     .stat {
@@ -108,7 +179,8 @@
       display: block;
       color: var(--teal);
       font-size: 20px;
-      margin-bottom: 4px;
+      margin-bottom: 5px;
+      letter-spacing: -0.02em;
     }
 
     .stat span {
@@ -117,57 +189,112 @@
       line-height: 1.35;
     }
 
-    .photo-card {
-      min-height: 340px;
-      border: 1px solid var(--line);
-      background:
-        linear-gradient(135deg, rgba(17,94,89,0.12), transparent),
-        #fff;
+    .profile-wrap {
       display: flex;
-      align-items: flex-end;
-      justify-content: flex-start;
-      padding: 26px;
+      justify-content: center;
     }
 
-    .photo-card p {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.5;
-      margin: 0;
-    }
-
-    section {
-      padding: 82px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .section-label {
-      color: var(--teal);
-      font-size: 12px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-    h2 {
-      font-size: clamp(34px, 4vw, 54px);
-      line-height: 1.05;
-      letter-spacing: -0.055em;
-      margin: 0 0 26px;
-      font-weight: 500;
+    .profile-image {
+      width: 100%;
+      max-width: 270px;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center 30%;
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 44px rgba(24, 24, 27, 0.08);
+      filter: saturate(0.82) contrast(1.03);
     }
 
     .two-col {
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
       gap: 70px;
+      align-items: start;
     }
 
-    .body-text {
+    .role-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 0;
+      border: 1px solid var(--line);
+      background: var(--soft);
+    }
+
+    .role-copy {
+      padding: 44px;
+    }
+
+    .role-image {
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      filter: saturate(0.85) contrast(1.02);
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--teal);
+      color: #fff;
+      text-decoration: none;
+      padding: 13px 19px;
+      border-radius: 2px;
+      font-size: 15px;
+      margin-top: 28px;
+    }
+
+    .button:hover {
+      opacity: 0.92;
+    }
+
+    .route {
+      margin-top: 42px;
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0;
+    }
+
+    .route::before {
+      content: "";
+      position: absolute;
+      top: 7px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: rgba(17, 94, 89, 0.35);
+    }
+
+    .city {
+      position: relative;
+      padding-top: 30px;
+      padding-right: 20px;
+    }
+
+    .city::before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 0;
+      width: 11px;
+      height: 11px;
+      border-radius: 999px;
+      background: var(--teal);
+    }
+
+    .city strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 7px;
+      letter-spacing: -0.02em;
+    }
+
+    .city span {
       color: var(--muted);
-      font-size: 17px;
-      line-height: 1.65;
-      margin: 0;
+      font-size: 13px;
+      line-height: 1.38;
     }
 
     .cards {
@@ -178,67 +305,49 @@
     }
 
     .card {
-      background: rgba(255,255,255,0.55);
+      background: rgba(255,255,255,0.58);
       border: 1px solid var(--line);
       padding: 24px;
-      min-height: 190px;
+      min-height: 188px;
     }
 
-    .card h3 {
-      font-size: 19px;
-      margin: 0 0 12px;
-      letter-spacing: -0.025em;
+    .card .icon {
+      color: var(--teal);
+      font-size: 24px;
+      margin-bottom: 18px;
     }
 
     .card p {
       color: var(--muted);
       font-size: 15px;
       line-height: 1.5;
-      margin: 0;
+      margin-bottom: 0;
     }
 
-    .timeline {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      margin-top: 36px;
-      overflow-x: auto;
-      padding-bottom: 12px;
-    }
-
-    .city {
-      min-width: 150px;
-      border-top: 2px solid var(--teal);
-      padding-top: 14px;
-    }
-
-    .city strong {
-      display: block;
-      margin-bottom: 6px;
-    }
-
-    .city span {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.4;
+    .ai-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 54px;
+      align-items: start;
     }
 
     .ai-panel {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      margin-top: 36px;
+      gap: 16px;
     }
 
     .ai-item {
       border: 1px solid var(--line);
       padding: 22px;
-      background: rgba(255,255,255,0.55);
+      background: rgba(255,255,255,0.58);
+      min-height: 146px;
     }
 
     .ai-item strong {
       display: block;
       margin-bottom: 8px;
+      letter-spacing: -0.02em;
     }
 
     .ai-item span {
@@ -247,22 +356,65 @@
       line-height: 1.5;
     }
 
-    .contact {
-      display: flex;
-      justify-content: space-between;
-      gap: 24px;
-      align-items: center;
-      padding-top: 72px;
+    .ecosystem {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 36px;
     }
 
-    .button {
-      display: inline-block;
-      background: var(--teal);
-      color: #fff;
-      text-decoration: none;
-      padding: 13px 20px;
-      border-radius: 2px;
-      font-size: 15px;
+    .eco-card {
+      min-height: 210px;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(17,94,89,0.08), rgba(17,94,89,0.02)),
+        rgba(255,255,255,0.58);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .eco-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .eco-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+      margin-bottom: 0;
+    }
+
+    .edu-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 32px;
+    }
+
+    .edu {
+      border-top: 2px solid var(--teal);
+      padding-top: 16px;
+    }
+
+    .edu strong {
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    .edu span {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: center;
+      padding-top: 72px;
     }
 
     .email {
@@ -270,36 +422,123 @@
       text-decoration: none;
       border-bottom: 1.5px solid var(--teal);
       padding-bottom: 4px;
+      font-weight: 500;
     }
 
-    @media (max-width: 800px) {
-      header {
-        margin-bottom: 60px;
+    .footer-brand {
+      text-align: right;
+      font-size: 22px;
+      letter-spacing: -0.045em;
+      font-weight: 500;
+    }
+
+    .small-note {
+      color: rgba(24,24,27,0.42);
+      font-size: 12px;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 920px) {
+      nav {
+        display: none;
       }
 
       .hero,
       .two-col,
-      .ai-panel {
+      .role-grid,
+      .ai-grid,
+      .contact {
         grid-template-columns: 1fr;
-        gap: 36px;
+      }
+
+      .hero {
+        gap: 44px;
+      }
+
+      .profile-wrap {
+        justify-content: flex-start;
+      }
+
+      .profile-image {
+        max-width: 230px;
       }
 
       .stats,
-      .cards {
+      .cards,
+      .ecosystem,
+      .edu-row {
         grid-template-columns: 1fr;
       }
 
-      .photo-card {
-        min-height: 220px;
+      .route {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .route::before {
+        left: 5px;
+        right: auto;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        height: auto;
+      }
+
+      .city {
+        padding-top: 0;
+        padding-left: 30px;
+      }
+
+      .city::before {
+        top: 4px;
+        left: 0;
+      }
+
+      .ai-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .role-copy {
+        padding: 30px;
+      }
+
+      .role-image {
+        min-height: 260px;
+      }
+
+      .footer-brand {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .page {
+        padding: 28px 22px 56px;
+      }
+
+      header {
+        margin-bottom: 56px;
       }
 
       section {
         padding: 58px 0;
       }
 
-      .contact {
-        flex-direction: column;
-        align-items: flex-start;
+      h1 {
+        font-size: clamp(50px, 15vw, 70px);
+      }
+
+      .intro {
+        font-size: 24px;
+      }
+
+      .sub,
+      .body-text {
+        font-size: 16px;
+      }
+
+      .profile-image {
+        max-width: 210px;
       }
     }
   </style>
@@ -309,13 +548,22 @@
   <div class="page">
     <header>
       <a class="brand" href="/">Gibson Law<span class="dot">.</span></a>
-      <nav>CV</nav>
+
+      <nav aria-label="CV navigation">
+        <a href="#profile">Profile</a>
+        <a href="#experience">Experience</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#international">International</a>
+        <a href="#ai">AI &amp; Legal Tech</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </header>
 
     <main>
-      <section class="hero">
-        <div>
+      <section class="hero" id="profile">
+        <div class="hero-copy">
           <div class="section-label">Profile</div>
+
           <h1>Shaun Gibson<span class="dot">.</span></h1>
 
           <p class="intro">
@@ -323,7 +571,8 @@
           </p>
 
           <p class="sub">
-            Currently Legal Director, Global Sports Marketing &amp; Business Affairs at adidas AG. Experience across endorsement, sponsorship, licensing, regulatory, commercial rights and AI-enabled legal delivery.
+            Currently Legal Director, Global Sports Marketing &amp; Business Affairs at adidas AG.
+            Experience across endorsement, sponsorship, licensing, regulatory, commercial rights and AI-enabled legal delivery.
           </p>
 
           <div class="stats">
@@ -331,14 +580,17 @@
               <strong>20+</strong>
               <span>years’ experience</span>
             </div>
+
             <div class="stat">
               <strong>Global</strong>
               <span>sports markets and stakeholders</span>
             </div>
+
             <div class="stat">
               <strong>Commercial</strong>
               <span>rights, partnerships and business affairs</span>
             </div>
+
             <div class="stat">
               <strong>AI-enabled</strong>
               <span>modern legal delivery</span>
@@ -346,59 +598,77 @@
           </div>
         </div>
 
-        <div class="photo-card">
-          <p>
-            Add a professional image here later. For now, this keeps the page clean and text-led.
-          </p>
+        <div class="profile-wrap">
+          <img
+            class="profile-image"
+            src="/assets/ME-AT.jpg"
+            alt="Shaun Gibson at a major sports event"
+          />
         </div>
       </section>
 
-      <section>
-        <div class="two-col">
-          <div>
+      <section id="experience">
+        <div class="role-grid">
+          <div class="role-copy">
             <div class="section-label">Current role</div>
+
             <h2>Currently at adidas AG.</h2>
+
+            <p class="body-text">
+              Legal Director, Global Sports Marketing &amp; Business Affairs. Advising across global sports marketing, brand partnerships, athlete and rights-holder relationships, sponsorship, licensing, IP, activation, regulatory matters and commercial dispute strategy.
+            </p>
+
+            <a class="button" href="#capabilities">View key capabilities</a>
           </div>
 
-          <p class="body-text">
-            Legal Director, Global Sports Marketing &amp; Business Affairs. Advising across global sports marketing, brand partnerships, athlete and rights-holder relationships, sponsorship, licensing, IP, activation, regulatory matters and commercial dispute strategy.
-          </p>
+          <img
+            class="role-image"
+            src="/assets/herzo.webp"
+            alt="adidas office in Herzogenaurach"
+          />
         </div>
       </section>
 
-      <section>
+      <section id="international">
         <div class="section-label">International experience</div>
+
         <h2>International by experience.</h2>
 
         <p class="body-text">
           A career shaped across the UK, Europe, the Middle East and Asia — working across cultures, stakeholders and commercial structures in global sport.
         </p>
 
-        <div class="timeline">
+        <div class="route" aria-label="International experience route">
           <div class="city">
             <strong>Glasgow</strong>
             <span>Legal foundation. Scottish qualification.</span>
           </div>
+
           <div class="city">
             <strong>London</strong>
             <span>International sport and global brands.</span>
           </div>
+
           <div class="city">
             <strong>Baku</strong>
             <span>Major event experience.</span>
           </div>
+
           <div class="city">
             <strong>Amsterdam</strong>
             <span>European markets and commercial operations.</span>
           </div>
+
           <div class="city">
             <strong>Nuremberg</strong>
             <span>Brand-side experience and international deal exposure.</span>
           </div>
+
           <div class="city">
             <strong>Hong Kong</strong>
             <span>Asia market exposure and global stakeholder management.</span>
           </div>
+
           <div class="city">
             <strong>Munich</strong>
             <span>Current base. adidas AG.</span>
@@ -406,47 +676,62 @@
         </div>
       </section>
 
-      <section>
-        <div class="section-label">Core capabilities</div>
-        <h2>Six areas. One integrated approach.</h2>
+      <section id="capabilities">
+        <div class="two-col">
+          <div>
+            <div class="section-label">Core capabilities</div>
+            <h2>Six areas. One integrated approach.</h2>
+          </div>
+
+          <p class="body-text">
+            Combining sports-law expertise, commercial judgment and technology-enabled delivery to support complex, high-pressure environments across the business of sport.
+          </p>
+        </div>
 
         <div class="cards">
           <div class="card">
+            <div class="icon">◈</div>
             <h3>Rights Packages</h3>
             <p>Structuring and negotiating rights packages for brands, athletes, clubs, federations, events and rights holders.</p>
           </div>
 
           <div class="card">
+            <div class="icon">◎</div>
             <h3>Business Affairs</h3>
             <p>Commercially pragmatic advice across legal, reputational, operational and stakeholder considerations.</p>
           </div>
 
           <div class="card">
+            <div class="icon">⚖</div>
             <h3>Regulation &amp; Sports Law</h3>
             <p>Sporting regulations, governance frameworks, eligibility, competition rules and compliance-sensitive commercial matters.</p>
           </div>
 
           <div class="card">
+            <div class="icon">↔</div>
             <h3>Sponsorship &amp; Endorsements</h3>
             <p>Global sponsorship, endorsement and partnership agreements across multiple sports categories.</p>
           </div>
 
           <div class="card">
+            <div class="icon">©</div>
             <h3>Licensing &amp; IP</h3>
             <p>Image rights, IP, licensing, merchandising, content rights and activation structures.</p>
           </div>
 
           <div class="card">
+            <div class="icon">⌘</div>
             <h3>AI &amp; Legal Delivery</h3>
             <p>Using AI and legal technology to improve drafting, review, negotiation support, knowledge management and client output.</p>
           </div>
         </div>
       </section>
 
-      <section>
-        <div class="two-col">
+      <section id="ai">
+        <div class="ai-grid">
           <div>
             <div class="section-label">AI &amp; legal tech</div>
+
             <h2>Legal delivery, upgraded.</h2>
 
             <p class="body-text">
@@ -490,37 +775,52 @@
 
       <section>
         <div class="section-label">Across the sports ecosystem</div>
+
         <h2>Broad experience. Real impact.</h2>
 
-        <div class="cards">
-          <div class="card">
+        <p class="body-text">
+          Experience across a wide range of sports, stakeholders and commercial structures — from brand partnerships and athlete endorsements to major events, rights holders and regulatory matters.
+        </p>
+
+        <div class="ecosystem">
+          <div class="eco-card">
             <h3>Clubs</h3>
             <p>Partnerships, kit rights, activation, category protection and renewal strategy.</p>
           </div>
 
-          <div class="card">
+          <div class="eco-card">
             <h3>Athletes</h3>
             <p>Endorsements, image rights, content, product obligations and performance-linked structures.</p>
           </div>
 
-          <div class="card">
+          <div class="eco-card">
             <h3>Federations</h3>
             <p>Commercial rights, governance and regulatory matters, event structures and stakeholder management.</p>
           </div>
 
-          <div class="card">
+          <div class="eco-card">
             <h3>Brands</h3>
             <p>Global partnerships, sponsorship strategy and brand protection.</p>
           </div>
 
-          <div class="card">
+          <div class="eco-card">
             <h3>Major Events</h3>
             <p>Event rights, activation, sponsorship frameworks and operational delivery.</p>
           </div>
 
-          <div class="card">
+          <div class="eco-card">
+            <h3>Motorsport</h3>
+            <p>Team partnerships, driver relationships and global activations.</p>
+          </div>
+
+          <div class="eco-card">
             <h3>Media &amp; Content</h3>
             <p>Content rights, distribution, activation and digital opportunities.</p>
+          </div>
+
+          <div class="eco-card">
+            <h3>Licensing &amp; IP</h3>
+            <p>Product, merchandising, image rights and brand protection.</p>
           </div>
         </div>
       </section>
@@ -532,49 +832,77 @@
             <h2>Dual expertise. Legal and technology.</h2>
           </div>
 
-          <p class="body-text">
-            BSc (Hons 1st), Computer Science with Law. LLB (Hons), Law. Scottish qualified solicitor. A legal career built on systems thinking, commercial judgment and practical delivery.
-          </p>
+          <div>
+            <p class="body-text">
+              A legal career built on systems thinking, commercial judgment and practical delivery.
+            </p>
+
+            <div class="edu-row">
+              <div class="edu">
+                <strong>BSc (Hons 1st)</strong>
+                <span>Computer Science with Law</span>
+              </div>
+
+              <div class="edu">
+                <strong>LLB (Hons)</strong>
+                <span>Law</span>
+              </div>
+
+              <div class="edu">
+                <strong>Scottish Qualified Solicitor</strong>
+                <span>Practising Certificate</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       <section>
         <div class="section-label">Operating style</div>
+
         <h2>Commercial instinct. Legal discipline.</h2>
 
         <div class="cards">
           <div class="card">
+            <div class="icon">⌖</div>
             <h3>Outcome-focused</h3>
             <p>Practical, commercial and solution-driven advice.</p>
           </div>
 
           <div class="card">
+            <div class="icon">✦</div>
             <h3>Clear communication</h3>
             <p>Open, direct and concise advice for senior stakeholders.</p>
           </div>
 
           <div class="card">
+            <div class="icon">↯</div>
             <h3>Calm under pressure</h3>
             <p>Experienced in complex, high-stakes sports environments.</p>
           </div>
         </div>
       </section>
 
-      <div class="contact">
-        <div>
-          <h2>Let’s connect.</h2>
-          <p class="body-text">
-            Open to conversations about opportunities, collaborations or the future of legal and commercial delivery in sport.
-          </p>
-        </div>
+      <section id="contact">
+        <div class="contact">
+          <div>
+            <div class="section-label">Next steps</div>
+            <h2>Let’s connect.</h2>
+            <p class="body-text">
+              Open to conversations about opportunities, collaborations or the future of legal and commercial delivery in sport.
+            </p>
+          </div>
 
-        <div>
-          <a class="button" href="mailto:info@gibsonlaw.ai">Get in touch</a>
-          <p style="margin-top:18px;">
-            <a class="email" href="mailto:info@gibsonlaw.ai">info@gibsonlaw.ai</a>
-          </p>
+          <div>
+            <a class="button" href="mailto:info@gibsonlaw.ai">Get in touch</a>
+            <p style="margin-top:18px;">
+              <a class="email" href="mailto:info@gibsonlaw.ai">info@gibsonlaw.ai</a>
+            </p>
+            <div class="footer-brand">Gibson Law<span class="dot">.</span></div>
+            <p class="small-note">This is a personal executive profile.</p>
+          </div>
         </div>
-      </div>
+      </section>
     </main>
   </div>
 </body>
