@@ -4,9 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <title>Shaun Gibson | CV</title>
   <meta name="description" content="Shaun Gibson. Senior international sports lawyer working across sport, rights and commercial partnerships." />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
 
   <style>
     :root {
@@ -197,13 +198,13 @@
 
     .profile-image {
       width: 100%;
-      max-width: 270px;
+      max-width: 300px;
       aspect-ratio: 4 / 5;
       object-fit: cover;
-      object-position: center 30%;
+      object-position: center 22%;
       border: 1px solid var(--line);
       box-shadow: 0 18px 44px rgba(24, 24, 27, 0.08);
-      filter: saturate(0.82) contrast(1.03);
+      filter: contrast(1.03);
     }
 
     .two-col {
@@ -232,7 +233,14 @@
       object-fit: cover;
       object-position: center;
       display: block;
-      filter: saturate(0.85) contrast(1.02);
+      filter: saturate(0.88) contrast(1.02);
+    }
+
+    .button-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
     }
 
     .button {
@@ -243,7 +251,12 @@
       padding: 13px 19px;
       border-radius: 2px;
       font-size: 15px;
-      margin-top: 28px;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--teal);
+      border: 1px solid var(--teal);
     }
 
     .button:hover {
@@ -365,26 +378,63 @@
     }
 
     .eco-card {
-      min-height: 210px;
+      position: relative;
+      min-height: 245px;
       border: 1px solid var(--line);
-      background:
-        linear-gradient(180deg, rgba(17,94,89,0.08), rgba(17,94,89,0.02)),
-        rgba(255,255,255,0.58);
+      overflow: hidden;
+      background: #111;
+      color: #fff;
       padding: 22px;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
     }
 
+    .eco-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: var(--image);
+      background-size: cover;
+      background-position: center;
+      filter: saturate(0.78) contrast(1.04);
+      transform: scale(1.02);
+    }
+
+    .eco-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.05) 0%,
+          rgba(0, 0, 0, 0.30) 44%,
+          rgba(0, 0, 0, 0.78) 100%
+        );
+    }
+
+    .eco-card h3,
+    .eco-card p {
+      position: relative;
+      z-index: 1;
+    }
+
     .eco-card h3 {
+      color: #fff;
       margin-bottom: 10px;
     }
 
     .eco-card p {
-      color: var(--muted);
+      color: rgba(255,255,255,0.84);
       font-size: 14px;
       line-height: 1.45;
       margin-bottom: 0;
+    }
+
+    .eco-card:hover::before {
+      transform: scale(1.06);
+      transition: transform 0.5s ease;
     }
 
     .edu-row {
@@ -431,6 +481,7 @@
       font-size: 22px;
       letter-spacing: -0.045em;
       font-weight: 500;
+      margin-top: 24px;
     }
 
     .small-note {
@@ -461,7 +512,7 @@
       }
 
       .profile-image {
-        max-width: 230px;
+        max-width: 250px;
       }
 
       .stats,
@@ -539,7 +590,7 @@
       }
 
       .profile-image {
-        max-width: 210px;
+        max-width: 220px;
       }
     }
   </style>
@@ -602,7 +653,7 @@
         <div class="profile-wrap">
           <img
             class="profile-image"
-            src="/assets/SGProfile.jpg"
+            src="/assets/shaun-gibson-profile.jpg"
             alt="Shaun Gibson"
           />
         </div>
@@ -619,7 +670,10 @@
               Legal Director, Global Sports Marketing &amp; Business Affairs. Advising across global sports marketing, brand partnerships, athlete and rights-holder relationships, sponsorship, licensing, IP, activation, regulatory matters and commercial dispute strategy.
             </p>
 
-            <a class="button" href="#capabilities">View key capabilities</a>
+            <div class="button-row">
+              <a class="button" href="#capabilities">View key capabilities</a>
+              <a class="button secondary" href="/assets/resume.pdf" download>Download resume</a>
+            </div>
           </div>
 
           <img
@@ -646,18 +700,8 @@
           </div>
 
           <div class="city">
-            <strong>London</strong>
-            <span>International sport and global brands.</span>
-          </div>
-
-          <div class="city">
             <strong>Baku</strong>
             <span>Major event experience.</span>
-          </div>
-
-          <div class="city">
-            <strong>Amsterdam</strong>
-            <span>European markets and commercial operations.</span>
           </div>
 
           <div class="city">
@@ -668,6 +712,16 @@
           <div class="city">
             <strong>Hong Kong</strong>
             <span>Asia market exposure and global stakeholder management.</span>
+          </div>
+
+          <div class="city">
+            <strong>London</strong>
+            <span>International sport and global brands.</span>
+          </div>
+
+          <div class="city">
+            <strong>Amsterdam</strong>
+            <span>European markets and commercial operations.</span>
           </div>
 
           <div class="city">
@@ -784,42 +838,42 @@
         </p>
 
         <div class="ecosystem">
-          <div class="eco-card">
+          <div class="eco-card" style="--image: url('/assets/clubs.jpg');">
             <h3>Clubs</h3>
             <p>Partnerships, kit rights, activation, category protection and renewal strategy.</p>
           </div>
 
-          <div class="eco-card">
+          <div class="eco-card" style="--image: url('/assets/athletes.jpg');">
             <h3>Athletes</h3>
             <p>Endorsements, image rights, content, product obligations and performance-linked structures.</p>
           </div>
 
-          <div class="eco-card">
+          <div class="eco-card" style="--image: url('/assets/federations.jpg');">
             <h3>Federations</h3>
             <p>Commercial rights, governance and regulatory matters, event structures and stakeholder management.</p>
           </div>
 
-          <div class="eco-card">
+          <div class="eco-card" style="--image: url('/assets/brands.jpg');">
             <h3>Brands</h3>
             <p>Global partnerships, sponsorship strategy and brand protection.</p>
           </div>
 
-          <div class="eco-card">
+          <div class="eco-card" style="--image: url('/assets/events.jpg');">
             <h3>Major Events</h3>
             <p>Event rights, activation, sponsorship frameworks and operational delivery.</p>
           </div>
 
-<div class="eco-card" style="--image: url('/assets/motorsport.jpg');">
-  <h3>Motorsport</h3>
-  <p>Team partnerships, driver relationships and global activations.</p>
-</div>
+          <div class="eco-card" style="--image: url('/assets/motorsport.jpg');">
+            <h3>Motorsport</h3>
+            <p>Team partnerships, driver relationships and global activations.</p>
+          </div>
 
-          <div class="eco-card">
+          <div class="eco-card" style="--image: url('/assets/media-content.jpg');">
             <h3>Media &amp; Content</h3>
             <p>Content rights, distribution, activation and digital opportunities.</p>
           </div>
 
-          <div class="eco-card">
+          <div class="eco-card" style="--image: url('/assets/licensing-ip.jpg');">
             <h3>Licensing &amp; IP</h3>
             <p>Product, merchandising, image rights and brand protection.</p>
           </div>
@@ -895,10 +949,15 @@
           </div>
 
           <div>
-            <a class="button" href="mailto:info@gibsonlaw.ai">Get in touch</a>
+            <div class="button-row">
+              <a class="button" href="mailto:info@gibsonlaw.ai">Get in touch</a>
+              <a class="button secondary" href="/assets/resume.pdf" download>Download resume</a>
+            </div>
+
             <p style="margin-top:18px;">
               <a class="email" href="mailto:info@gibsonlaw.ai">info@gibsonlaw.ai</a>
             </p>
+
             <div class="footer-brand">Gibson Law<span class="dot">.</span></div>
             <p class="small-note">This is a personal executive profile.</p>
           </div>
